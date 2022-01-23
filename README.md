@@ -10,7 +10,7 @@ In this repository will focus on the Apache Kafka , should be a similar implemen
 Step1 : Download the .tgz file from the Apache Kafka website
 
 Step2 : run the command tar -xvzf <kafka.tgz>
-For example $tar -xvzf kafka-3.0.0-src.tgz
+For example $tar -xvzf kafka-3.0.0-src.tgz > there is a problem with 3.0.0 with windows sometime use the 2.8.1 version
 This will get you the Kafka software in a folder
 
 Step3: Setting up Zookeeper and Start Zookeeper
