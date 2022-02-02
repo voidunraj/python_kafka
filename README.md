@@ -33,3 +33,34 @@ zookeeper.connect=localhost:2181 -> Remember the config we did above this step s
 
 Windows
 >kafka-server-start.bat ..\..\config\server.properties
+
+
+Create a topic
+Windows
+>kafka-topics.bat --create --zookeeper localhost:2181 --replication-factor 1 --partitions 1 --topic test
+Unix
+> 
+
+List topics
+Unix
+>kafka-topics.sh --list --zookeeper localhost:2181
+windows
+> kafka-topics.bat --list --zookeeper localhost:2181
+
+
+Run producer.py from command prompt and also keep observing the Kafka Server logs. The place where we started this from will print in the Iteration and data
+iteration: 1
+{'name': 'baba', 'age': 2000}
+iteration: 2
+{'name': 'baba', 'age': 2000}
+iteration: 3
+{'name': 'baba', 'age': 2000}
+
+Run consumer.py from command prompt and also keep observing the Kafka Server logs. The place where we started this from will print the message. 
+
+Consumer started
+ConsumerRecord(topic='test', partition=0, offset=0, timestamp=1643770200543, timestamp_type=0, key=None, value=b'{"name": "baba", "age": 2000}', headers=[], checksum=None, serialized_key_size=-1, serialized_value_size=29, serialized_header_size=-1)
+ConsumerRecord(topic='test', partition=0, offset=1, timestamp=1643770205547, timestamp_type=0, key=None, value=b'{"name": "baba", "age": 2000}', headers=[], checksum=None, serialized_key_size=-1, serialized_value_size=29, serialized_header_size=-1)
+ConsumerRecord(topic='test', partition=0, offset=2, timestamp=1643770210553, timestamp_type=0, key=None, value=b'{"name": "baba", "age": 2000}', headers=[], checksum=None, serialized_key_size=-1, serialized_value_size=29, serialized_header_size=-1)
+
+Note the serialization of the data in the aboce
